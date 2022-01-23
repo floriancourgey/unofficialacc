@@ -42,14 +42,14 @@ layout: default
 
   <div>
     <a class="btn btn-primary" href="{{page.download_link}}" role="button" target="_blank"><i class="fas fa-download"></i> Download</a>
-    Downloads: <span id="download_count">X</span>
+    <span class="btn border border-primary">Downloads: <span id="download_count" class="badge badge-success"><i class="fas fa-circle-notch fa-spin"></i></span></span>
     Updated at: <span>{{page.updated_at}}</span>
     Last Version: <span>{{page.last_version}}</span>
     Created at: <span>{{page.created_at}}</span>
   </div>
 
   <script>
-
+    var release_name = '{{page.release_name}}';
   </script>
 
   <div class="post-content e-content" itemprop="articleBody">
