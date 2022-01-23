@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+    {%- include gtm-noscript.html -%}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    {%- include announcement.html -%}
+
+    {%- include header.html -%}
+
+    <div class="container my-4" aria-label="Content">
+      <main class="col-md-10 offset-md-1">
+        {{ content }}
+      </main>
+    </div>
+
+    {%- include footer.html -%}
+
+    <!-- Search Modal -->
+    <div class="modal fade p-0" id="modal-search" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog mw-100 m-0 h-100" role="document">
+        <div class="modal-content border-0 rounded-0 text-center">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title">Search</h5>
+            <input id="search-input" autofocus type="search" class="border-bottom border-primary text-center" style="border:0;outline:none;background:none;" aria-label="Search">
+            <i class="fas fa-question" data-toggle="tooltip" title="Look for 'Search' to find out how this simple component is made" style="color:lightgrey"></i>
+            <div id="results-container" class="mx-0"></div>
+          </div>
+      </div>
+    </div>
+
+    {%- include footer-javascript.html -%}
+  </body>
+
+</html>

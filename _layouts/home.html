@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    {%- for post in site.posts -%}
+    <div class="card shadow-sm mb-4 bg-white rounded">
+      <div class="card-body">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+              {{ post.title | escape }}
+          </h3>
+        </a>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+        <div class="row">
+          <div class="col-md-10 post-categories">
+            {% for category in post.categories %}
+              <a href="{{site.baseurl}}/categories?id={{category|slugize}}"
+                class="badge badge-info">
+                <i class="fas fa-tag"></i> {{category}}
+              </a>
+              {% unless forloop.last %}&nbsp;{% endunless %}
+            {% endfor %}
+          </div>
+          <div class="col-md-2 text-right">
+            <a href="{{ post.url | relative_url }}" class="card-link">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+
+  {%- endif -%}
+
+</div>
