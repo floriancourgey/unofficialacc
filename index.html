@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="home">
-  <h1 class="page-heading">{{ site.posts | size }} Posts</h1>
+  <h1 class="page-heading">{{ site.packages | size }} Packages</h1>
 
-  {%- for post in paginator.posts -%}
+  {%- for post in site.packages -%}
   <div class="card shadow-sm mb-4 bg-white rounded">
     <div class="card-body">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

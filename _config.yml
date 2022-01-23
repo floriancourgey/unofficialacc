@@ -28,12 +28,20 @@ paginate_path: "/page-:num/"
 collections:
   authors:
     output: true
+  packages:
+    output: true
 
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
 defaults:
   - scope:
       path: ""
       type: "posts"
+    values:
+      layout: "post"
+      author: "Florian Courgey"
+  - scope:
+      path: ""
+      type: "packages"
     values:
       layout: "post"
       author: "Florian Courgey"
