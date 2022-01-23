@@ -7,9 +7,6 @@ task :test do
     :report_invalid_tags => false,
     :verbose => true,
     :allow_hash_href => true,
-    :url_swap => {
-        '^/categories' => 'categories.html',
-    },
     :disable_external => true
   }
   #HTMLProofer.check_directory("./_site/2018", options).run

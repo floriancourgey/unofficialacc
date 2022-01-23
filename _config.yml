@@ -59,7 +59,6 @@ algolia:
       - headings
       - unordered(content)
       - collection
-      - categories
       - tags
 
 # Build settings

@@ -25,15 +25,6 @@ layout: default
           {{ post.excerpt }}
         {%- endif -%}
         <div class="row">
-          <div class="col-md-10 post-categories">
-            {% for category in post.categories %}
-              <a href="{{site.baseurl}}/categories?id={{category|slugize}}"
-                class="badge badge-info">
-                <i class="fas fa-tag"></i> {{category}}
-              </a>
-              {% unless forloop.last %}&nbsp;{% endunless %}
-            {% endfor %}
-          </div>
           <div class="col-md-2 text-right">
             <a href="{{ post.url | relative_url }}" class="card-link">Read more</a>
           </div>
