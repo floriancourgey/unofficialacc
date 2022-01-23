@@ -4,7 +4,7 @@
   {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 
   <nav class="container navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="{% link index.html %}">{{ site.title | escape }}</a>
+    <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title | escape }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
