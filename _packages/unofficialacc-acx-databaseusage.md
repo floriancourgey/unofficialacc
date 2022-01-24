@@ -29,7 +29,7 @@ entities:
 ## Demo
 
 ![]({{ site.baseurl }}/assets/unofficialacc-acx-databaseusage/unofficialacc-acx-databaseusage-tables.jpg)
-![](/assets/unofficialacc-acx-databaseusage/unofficialacc-acx-databaseusage-workflows.jpg)
+![]({{ site.baseurl }}/assets/unofficialacc-acx-databaseusage/unofficialacc-acx-databaseusage-workflows.jpg)
 
 ## Usage
 
