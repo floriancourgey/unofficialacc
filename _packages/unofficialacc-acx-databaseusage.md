@@ -11,11 +11,27 @@ entities:
   - option acxCustomerName
   - option acxInstanceName
   - option acxSFTPUserName
+  - option acxDatabaseUsageReportVersion
+  - jssp acx:databaseUsage.jssp
+  - javascript acx:core.js
+  - javascript acx:database.js
+  - javascript acx:net.js
+  - javascript acx:workflow.js
+  - sql acx:postgresql-aggruvspace.sql
+  - sql acx:postgresql-pgbloat.sql
+  - sql acx:postgresql-pglocks.sql
+  - sql acx:postgresql-uvspace.sql
+  - sql acx:sqlserver-uvspace.sql
 ---
 
 <!--more-->
 
 ## Demo
+
+
+## Usage
+
+- Go to https://yourinstance/acx/databaseUsage.jssp
 
 ## Installation
 
@@ -23,7 +39,3 @@ entities:
 - Run SQL Scripts in Administration>Configuration>SQL Scripts:
   - acx:postgresql-uvspace.sql
   - acx:postgresql-aggruvspace.sql
-
-## Usage
-
-- Go to https://yourinstance/acx/databaseUsage.jssp
