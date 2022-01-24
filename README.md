@@ -32,6 +32,7 @@ entities:
 Excerpt here...
 <!--more-->
 ## Demo
+![]({{ site.baseurl }}/assets/unofficialacc-title/unofficialacc-title.jpg)
 ## Usage
 ## Installation
 ## Pre-requisites
