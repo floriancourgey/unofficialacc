@@ -1,5 +1,5 @@
 ---
-title: Unofficial ACC: Views
+title: "Unofficial ACC: Views"
 download_link: https://github.com/floriancourgey/unofficialacc/releases/download/unofficialacc-views-1.0.0/unofficialacc-views.xml
 release_name: unofficialacc-views
 created_at: 2019-12-31
