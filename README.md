@@ -17,28 +17,25 @@ $ touch _package/unofficialacc-title.md
 
 ```markdown
 ---
-title: New article
-categories: [prestashop,google,opensource,adobe campaign]
+title: New Package
+download_link: https://github.com/floriancourgey/unofficialacc/releases/download/unofficialacc-xxx-X.Y.Z/unofficialacc-xxx-X.Y.Z.xml
+author: XXX
+release_name: unofficialacc-xxx
+created_at: 20YY-MM-DD
+updated_at: 20YY-MM-DD
+last_version: X.Y.Z
+short_description: Package to xxx and yyy
+entities:
+  - option xxx
+  - schema yyy
 ---
 Excerpt here...
-<p class="text-center">🐍👑🌍</p>
 <!--more-->
-**bold** *italic*  ~~strikethrough~~
-## Use h2 for each section
-![todo](/assets/images/2019/01/image.png)
+## Demo
+## Usage
+## Installation
+## Pre-requisites
 ```
-
-Video:
-```html
-<div class="text-center">
-  <video autoplay loop muted playsinline height="250">
-    <source src="/assets/images/2018/12/overthewire-natas12-php-injection.mp4" type="video/mp4" />
-  </video>
-</div>
-```
-
-Markdown reference
-[https://guides.github.com/features/mastering-markdown/#examples](https://guides.github.com/features/mastering-markdown/#examples)
 
 ## Update Algolia index
 ```bash
