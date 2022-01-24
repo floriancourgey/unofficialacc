@@ -6,28 +6,13 @@ title: Archives
 <div class="home">
   <h1 class="page-heading">{{ site.packages | size }} Packages</h1>
 
-  {%- for package in site.packages -%}
-  <div class="card shadow-sm mb-4 bg-white rounded">
-    <div class="card-body">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <a class="post-link" href="{{ package.url | relative_url }}">
-        <span class="post-meta">{{ package.date | date: date_format }}</span>
-        <h3>
-            {{ package.title | escape }}
-        </h3>
-      </a>
-      {%- if package.excerpt -%}
-        {% assign length = package.excerpt | size %}
-        {% if package.excerpt.size > 20 %}
-          {{ package.excerpt | truncatewords: 30 }}
-        {%- endif -%}
-      {%- endif -%}
-      <div class="text-right">
-        <a href="{{ package.url | relative_url }}" class="card-link">Read more</a>
+  <div class="row">
+    {%- for package in site.packages -%}
+      <div class="col-md-3">
+        {% include package-card.html package="package" %}
       </div>
-    </div>
+    {%- endfor -%}
   </div>
-  {%- endfor -%}
 
   {% if paginator.total_pages > 1 %}
   <nav class="d-flex justify-content-center">
