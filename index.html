@@ -4,37 +4,49 @@ permarlink: /
 ---
 
 <div class="home">
-  <h1 class="page-heading">{{ site.packages | size }} Adobe Campaign Packages</h1>
+  <div class="text-center">
+    <h1 class="page-heading display-4">
+      Unofficial ACC
+    </h1>
+    <p class="h4 col-md-8 m-auto">
+      {{site.description}}
+    </p>
+  </div>
 
-  <div>
-    <h2>Recent packages</h2>
+  <!-- Recent -->
+  <div class="my-4">
+    <h2>
+      Recent packages
+      <a href="{{ site.baseurl }}{% link archives.md %}">
+        <small class="text-muted h6">(Show all {{ site.packages | size }} packages)</small>
+      </a>
+    </h2>
     <div class="row">
       {% assign recentpackages = site.packages | sort: "updated_at" | limit: 3 %}
       {% for package in recentpackages %}
-        <div class="col-sm-4">
-          <div class="card" href="#">
-            <div class="card-header">
-              <h3 class="m-0">{{package.title}}</h3>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                {{package.short_description}}
-              </p>
-            </div>
-            <div class="card-footer text-muted">
-              v{{package.last_version}}
-              <a href="{{ package.url | relative_url }}" class="btn btn-primary">
-                <i class="fas fa-search"></i> Open
-              </a>
-            </div>
-          </div>
+      <div class="col-sm-4">
+          {% include package-card.html package="package" %}
         </div>
       {% endfor %}
     </div>
   </div>
 
-  <div>
-    <h2>Top packages</h2>
+  <!-- Top -->
+  <div class="my-4">
+    <h2>
+      Top packages
+      <a href="{{ site.baseurl }}{% link archives.md %}">
+        <small class="text-muted h6">(Show all {{ site.packages | size }} packages)</small>
+      </a>
+    </h2>
+    <div class="row">
+      {% assign toppackages = site.packages | sort: "created_at" | limit: 3 %}
+      {% for package in toppackages %}
+      <div class="col-sm-4">
+          {% include package-card.html package="package" %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
 </div>
