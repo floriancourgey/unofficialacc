@@ -4,8 +4,8 @@ download_link: https://github.com/floriancourgey/unofficialacc/releases/download
 author: ACX
 release_name: unofficialacc-acx-databaseusage
 created_at: 2016-01-01
-updated_at: 2022-01-01
-last_version: 2.2
+updated_at: 2016-01-01
+last_version: 2.2.0
 short_description: ACX package to review and monitor ACC Database Usage
 entities:
   - option acxCustomerName
