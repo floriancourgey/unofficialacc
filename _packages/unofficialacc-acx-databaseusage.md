@@ -28,6 +28,8 @@ entities:
 
 ## Demo
 
+![](/assets/unofficialacc-acx-databaseusage/unofficialacc-acx-databaseusage-tables.jpg)
+![](/assets/unofficialacc-acx-databaseusage/unofficialacc-acx-databaseusage-workflows.jpg)
 
 ## Usage
 
