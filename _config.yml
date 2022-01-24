@@ -19,7 +19,7 @@ manifest:
 disqus:
   shortname: floriancourgey
 
-gtm:
+gtm: GTM-TW7B2FW
 
 # paginate plugin
 paginate: 10
