@@ -1,0 +1,191 @@
+﻿<?xml version='1.0'?>
+<package author="Administrator (admin)" buildDate="2022-01-24 16:06:04.448Z" buildNumber="8937"
+         buildVersion="6.7" img="xtk:installedPackage.png" label="Unofficial ACC: Views"
+         name="views" namespace="unofficialacc" vendor="">
+  <entities schema="xtk:folder">
+    <folder entity="xtk:folder" image-name="folder.png" image-namespace="xtk" label="Unofficial ACC Views"
+            model="xtkFolder" name="unofficialAccViews" order="11" sort="true">
+      <where filteringSchema=""/>
+    </folder>
+    <folder entity="xtk:folder" image-name="task.png" image-namespace="xtk" isView="1"
+            label="Approvals - View" model="xtkWorkflowTask" name="unofficialAccViewsApprovals"
+            order="18" schema="xtk:workflowTask">
+      <where filteringSchema="xtk:workflowTask"></where>
+      <parent _operation="none" name="unofficialAccViews"/>
+    </folder>
+    <folder entity="nms:program" image-name="operation.png" image-namespace="nms"
+            isView="1" label="Campaign templates - View" model="nmsOperationModel"
+            name="unofficialAccViewsCampaignTemplates" order="1" schema="nms:operation">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:operation"/>
+    </folder>
+    <folder entity="nms:program" image-name="program.png" image-namespace="nms" isView="1"
+            label="Campaigns - View" model="nmsProgram" name="unofficialAccViewsCampaigns"
+            order="2" schema="nms:operation">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:operation"/>
+    </folder>
+    <folder entity="nms:program" image-name="program.png" image-namespace="nms" isView="1"
+            label="Campaigns Started - View" model="nmsProgram" name="unofficialAccViewsCampaignsStarted"
+            order="1" schema="nms:operation">
+      <where filteringSchema="nms:operation">
+        <condition expr="@status = 1" internalId="3429826730"/>
+      </where>
+      <parent _operation="none" name="unofficialAccViewsCampaigns"/>
+    </folder>
+    <folder entity="nms:program" image-name="program.png" image-namespace="nms" isView="1"
+            label="Campaigns with Scheduler - View" model="nmsProgram" name="unofficialAccViewsCampaignsWithScheduler"
+            order="2" schema="nms:operation">
+      <where filteringSchema="nms:operation">
+        <condition expr="workflow" internalId="3436314952" setOperator="EXISTS">
+          <condition expr="data LIKE '%' + '&lt;schedule' + '%'" internalId="3436773706"/>
+        </condition>
+      </where>
+      <parent _operation="none" name="unofficialAccViewsCampaigns"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="folderview.png" image-namespace="nms"
+            isView="1" label="Content templates - View" model="nmsDigitalContentModel"
+            name="unofficialAccViewsContentTemplates" order="19" schema="nms:includeView">
+      <where filteringSchema="nms:includeView"></where>
+      <parent _operation="none" name="unofficialAccViews"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="campaign.png" image-namespace="nms" isView="1"
+            label="Deliveries - View" model="nmsDelivery" name="unofficialAccViewsDeliveries"
+            order="11" schema="nms:delivery">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:delivery"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="delivery.png" image-namespace="nms" isView="1"
+            label="Deliveries Finished - View" model="nmsDelivery" name="unofficialAccViewsDeliveriesFinished"
+            order="1" schema="nms:delivery">
+      <where filteringSchema="nms:delivery">
+        <condition expr="@state = 95" internalId="3441164644"/>
+      </where>
+      <parent _operation="none" name="unofficialAccViewsDeliveries"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="delivery.png" image-namespace="nms" isView="1"
+            label="Deliveries In Progress - View" model="nmsDelivery" name="unofficialAccViewsInProgress"
+            order="2" schema="nms:delivery">
+      <where filteringSchema="nms:delivery">
+        <condition expr="@state = 55" internalId="3443851622"/>
+      </where>
+      <parent _operation="none" name="unofficialAccViewsDeliveries"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="deliveryModel.png" image-namespace="nms"
+            isView="1" label="Delivery templates - View" model="nmsDeliveryModel"
+            name="unofficialAccViewsDeliveryTemplates" order="18" schema="nms:delivery">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:delivery"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="textfile.png" image-namespace="xtk" isView="1"
+            label="File resources - View" model="xtkFileRes" name="unofficialAccViewsFileResources"
+            order="19" schema="xtk:fileRes">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:fileRes"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="execute.png" image-namespace="xtk" isView="1"
+            label="Jobs - View" model="xtkJobInstance" name="unofficialAccViewsJobs"
+            order="20" schema="xtk:job">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:job"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="fldrcpgrp.png" image-namespace="nms"
+            isView="1" label="Lists - View" model="nmsGroup" name="unofficialAccViewsLists"
+            order="13" schema="nms:group">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:group"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="operator.png" image-namespace="xtk" isView="1"
+            label="Operators - View" model="xtkOperator" name="unofficialAccViewsOperators"
+            order="19" schema="xtk:operator">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:operator"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="folderview.png" image-namespace="nms"
+            isView="1" label="Personalization blocks - View" model="nmsIncludeView"
+            name="unofficialAccViewsPersonalizationBlocks" order="21" schema="nms:includeView">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:includeView"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="filter.png" image-namespace="xtk" isView="1"
+            label="Predefined filters - View" model="xtkQueryFilter" name="unofficialAccViewsFilters"
+            order="22" schema="xtk:queryFilter">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:queryFilter"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="rcpFolder.png" image-namespace="nms"
+            isView="1" label="Recipients - View" model="nmsRecipient" name="unofficialAccViewsRecipients"
+            order="10" schema="nms:recipient">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:recipient"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="report.png" image-namespace="xtk" isView="1"
+            label="Reports - View" model="xtkReport" name="unofficialAccViewsReports"
+            order="8" schema="xtk:report">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:report"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="unknownad.png" image-namespace="nms"
+            isView="1" label="Seed addresses - View" model="nmsSeedList" name="unofficialAccViewsSeedAdresses"
+            order="22" schema="nms:seedMember">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:seedMember"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="supplier.png" image-namespace="nms" isView="1"
+            label="Service Providers - View" model="nmsSupplier" name="unofficialAccViewsServiceProviders"
+            order="12" schema="nms:supplier">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:supplier"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="webApp.png" image-namespace="nms" isView="1"
+            label="Web applications - View" model="nmsWebApp" name="unofficialAccViewsWebApplications"
+            order="10" schema="nms:webApp">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="nms:webApp"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="webApp.png" image-namespace="nms" isView="1"
+            label="Web applications Online - View" model="nmsWebApp" name="unofficialAccViewsWebApplicationsOnline"
+            order="1" schema="nms:webApp">
+      <where filteringSchema="nms:webApp">
+        <condition expr="@appState = 10" internalId="3421896803"/>
+      </where>
+      <parent _operation="none" name="unofficialAccViewsWebApplications"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="workflowModel.png" image-namespace="xtk"
+            isView="1" label="Workflow templates - View" model="xtkWorkflowModel"
+            name="unofficialAccViewsWorkflowTemplates" order="20" schema="xtk:workflow">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:workflow"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="workflow.png" image-namespace="xtk" isView="1"
+            label="Workflows - View" model="xtkWorkflow" name="unofficialAccViewsWorkflows"
+            order="5" schema="xtk:workflow">
+      <parent _operation="none" name="unofficialAccViews"/>
+      <where filteringSchema="xtk:workflow"/>
+    </folder>
+    <folder entity="xtk:folder" image-name="workflow.png" image-namespace="xtk" isView="1"
+            label="Workflows with Campaign - View" model="xtkWorkflow" name="unofficialAccViewsWorkflowsWithCampaign"
+            order="1" schema="xtk:workflow">
+      <where filteringSchema="xtk:workflow">
+        <condition expr="[operation/@id] &lt;&gt; 0" internalId="3416981598"/>
+      </where>
+      <parent _operation="none" name="unofficialAccViewsWorkflows"/>
+    </folder>
+  </entities>
+  <entities schema="xtk:specFile">
+    <specFile img="xtk:installedPackage.png" includeDefaultValues="false" includeInstallScript="false"
+              includeSpec="true" label="Unofficial ACC: Views" name="views" namespace="unofficialacc"
+              type="0">
+      <definition automaticDefinition="false" id="3461808539" lineCountMax="5000"
+                  schema="xtk:folder">
+        <where displayFilter="internal name starts with 'unofficialAccViews'">
+          <condition compositeKey="" dependkey="" enabledIf="" expr="@name LIKE 'unofficialAccViews' + '%'"
+                     internalId="3461939612"/>
+        </where>
+      </definition>
+      <properties>
+        <progress current="0" max="0"/>
+      </properties>
+    </specFile>
+  </entities>
+</package>
