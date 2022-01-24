@@ -1,8 +1,54 @@
 ﻿<?xml version='1.0'?>
-<package author="Administrator (admin)" buildDate="2022-01-24 16:47:12.814Z" buildNumber="8937"
+<package author="Administrator (admin)" buildDate="2022-01-24 17:36:48.009Z" buildNumber="8937"
          buildVersion="6.7" img="xtk:installedPackage.png" label="Unofficial ACC: Common Libraries"
          name="commonlibraries" namespace="unofficialacc" vendor="">
   <entities schema="xtk:javascript">
+    <javascript entitySchema="xtk:javascript" img="xtk:javascript.png" label="commonLibraries.helpers.js"
+                name="commonLibraries.helpers.js" namespace="unofficialAcc">
+      <data><![CDATA[/**
+ * Helper for the ACC execCommand() function
+ * @author Florian Courgey
+ * Documentation {@link https://github.com/floriancourgey/adobe-campaign-shell}
+ * @version 1.0.0 
+ * @param {string} command the linux command to execute
+ * @param {object} params
+ * @param {bool} params.logTheCall if true, calls logInfo(command) (default to true)
+ * @param {bool} params.logTheOutput if true, send the output to logInfo (default to true)
+ * @param {bool} params.throwOnError if true, throws an exception if linuxResultCode is != 0 (default to false)
+ *
+ * @example
+ * sh.exec('pwd'); // print working directory
+ * sh.exec('mkdir -p a/b/c', {logTheCall:false}); // create folder (with parents if needed)
+ * sh.exec('mktemp -d', {logTheOutput:false, throwOnError: true}); // createa a temp folder
+ */
+var sh = {
+  // vars for defaults & instance usage
+  logTheCall: true,
+  logTheOutput: true,
+  throwOnError: false,
+  // exec()
+  exec: function(command, params){
+    var _this = this; // cache this
+    if(undefined == params){
+      params = {};
+    }
+    var logTheCall = undefined != params.logTheCall ? params.logTheCall : _this.logTheCall;
+    var logTheOutput = undefined != params.logTheOutput ? params.logTheOutput : _this.logTheOutput;
+    var throwOnError = undefined != params.throwOnError ? params.logTheOutput : _this.throwOnError;
+    if(logTheCall){
+      logInfo('sh.exec: '+command);
+    }
+    var result = execCommand(command, !throwOnError); // @return [linux result code, output]
+    var lines = result[1].split("\n");
+    if(logTheOutput){
+      for each (var line in lines){ 
+        logInfo("" + line);
+      }
+    }
+    return {linuxResultCode: result[0], rawOutput: result[1], lines: lines};
+  }
+};]]></data>
+    </javascript>
     <javascript entitySchema="xtk:javascript" img="xtk:javascript.png" label="lodash.js"
                 name="commonLibraries.lodash.js" namespace="unofficialAcc">
       <data><![CDATA[/**
@@ -159,7 +205,8 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
             isView="1" label="Unofficial ACC Common libraries" model="xtkJavascript"
             name="unofficialAccCommonLibraries" order="1" schema="xtk:javascript">
       <where filteringSchema="xtk:javascript">
-        <condition expr="@namespace = 'unofficialAccCommonLibraries'" internalId="3591373233"/>
+        <condition boolOperator="AND" expr="@namespace = 'unofficialAcc'" internalId="3591373233"/>
+        <condition expr="@name LIKE 'commonLibraries' + '%'" internalId="3642098113"/>
       </where>
       <parent _operation="none" name="xtkJavascript"/>
     </folder>
@@ -170,10 +217,10 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
               namespace="unofficialacc" type="0">
       <definition automaticDefinition="false" id="3616014773" lineCountMax="5000"
                   schema="xtk:javascript">
-        <where displayFilter="namespace equal to 'unofficialAcc' and name is included in 'commonLibraries.moment.js,commonLibraries.lodash.js'">
+        <where displayFilter="namespace equal to 'unofficialAcc' and name is included in 'commonLibraries.moment.js,commonLibraries.lodash.js,commonLibraries.helpers.js'">
           <condition boolOperator="AND" compositeKey="" dependkey="" enabledIf=""
                      expr="@namespace = 'unofficialAcc'" internalId="3616473526"/>
-          <condition compositeKey="" dependkey="" enabledIf="" expr="@name IN ('commonLibraries.moment.js', 'commonLibraries.lodash.js')"
+          <condition compositeKey="" dependkey="" enabledIf="" expr="@name IN ('commonLibraries.moment.js', 'commonLibraries.lodash.js', 'commonLibraries.helpers.js')"
                      internalId="3616997816"/>
         </where>
       </definition>
@@ -184,9 +231,9 @@ var n=this.__index__>=this.__values__.length;return{done:n,value:n?F:this.__valu
                      internalId="3621585339"/>
         </where>
       </definition>
-      <execution buildDate="2022-01-24 16:46:14.202Z" fileName="package_unofficialacc_commonlibraries.xml"
+      <execution buildDate="2022-01-24 17:04:35.669Z" fileName="package_unofficialacc_commonlibraries.xml"
                  filePath="C:\Users\Flocourgey\Neolane\Adobe Campaign Classic v7\bin\..\var\instance1\upload\"
-                 fileSize="128425" objectCount="2"/>
+                 fileSize="129732" objectCount="3"/>
       <properties>
         <progress current="0" max="0"/>
       </properties>
