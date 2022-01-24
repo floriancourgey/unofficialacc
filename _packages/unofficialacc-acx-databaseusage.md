@@ -7,6 +7,10 @@ created_at: 2016-01-01
 updated_at: 2022-01-01
 last_version: 2.2
 short_description: ACX package to review and monitor ACC Database Usage
+entities:
+  - option acxCustomerName
+  - option acxInstanceName
+  - option acxSFTPUserName
 ---
 
 <!--more-->

@@ -10,7 +10,7 @@ layout: default
       {{ page.title | smartify }}
     </h1>
     <div class="row post-meta">
-      <p class="col-6">
+      <div class="col-6">
         <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           {{ page.date | date: date_format }}
@@ -22,12 +22,15 @@ layout: default
               </span>
             </a>
         {%- endif -%}
-      </p>
-      <p class="col-6 text-right">
+      </div>
+      <div class="col-6 text-right">
         <a href="https://github.com/floriancourgey/unofficialacc/tree/master/{{ page.path }}" target="_blank">
           <i class="fas fa-pencil-alt"></i> Improve this page
         </a>
-      </p>
+      </div>
+    </div>
+    <div class="lead">
+      {{ page.short_description }}
     </div>
     <div class="post-categories">
       {% for category in page.categories %}
@@ -42,11 +45,12 @@ layout: default
 
   <div class="">
     <div class="row">
-      <div class="post-content e-content col-md-9" itemprop="articleBody">
+      <div class="post-content e-content col-md-8" itemprop="articleBody">
         {{ content }}
       </div>
 
-      <div class="col-md-3 order-sm-1">
+      <div class="col-md-4 order-sm-1">
+        <!-- Package info -->
         <div class="card">
           <div class="card-header">
             <i class="fas fa-info-circle"></i> Package info
@@ -67,6 +71,22 @@ layout: default
             <div>
               Created at: <span>{{page.created_at}}</span>
             </div>
+          </div>
+          <div class="card-fooder">
+          </div>
+        </div>
+
+        <!-- Package content -->
+        <div class="card mt-4">
+          <div class="card-header">
+            <i class="fas fa-folder-open"></i> Package content
+          </div>
+          <div class="card-body">
+            <ul>
+              {% for entity in page.entities %}
+                <li>{{entity}}</li>
+              {% endfor %}
+            </ul>
           </div>
           <div class="card-fooder">
           </div>
