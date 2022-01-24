@@ -5,9 +5,8 @@ release_name: new-package
 created_at: 2022-01-21
 updated_at: 2022-01-23
 last_version: 0.0.2
+short_description: Second package to test UX/UI before Go live
 ---
-
-<p class="text-center">🐍👑🌍</p>
 
 <!--more-->
 

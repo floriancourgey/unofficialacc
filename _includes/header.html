@@ -4,7 +4,7 @@
   {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 
   <nav class="container navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="navbar-brand" href="{{ site.baseurl }}{% link index.html %}">{{ site.title | escape }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,13 +12,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}{% link index.html %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}{% link install.md %}">Installation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}{% link contribute.md %}">Contribute</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}{% link about.md %}">About</a>
+        </li>
+        <li class="nav-item">
           <div class="btn-group">
             <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All
               <span class="sr-only">Toggle Dropdown</span>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% link archives.html %}">Archives</a>
+              <a class="dropdown-item" href="{{ site.baseurl }}{% link archives.md %}">Archives</a>
             </div>
           </div>
         </li>

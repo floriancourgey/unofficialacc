@@ -10,9 +10,9 @@ $ bundle exec jekyll serve --watch --baseurl ""
 
 ```
 
-## Create a post
+## Create a package
 ```bash
-$ touch _posts/YYYY-mm-dd-slug-here.md
+$ touch _package/unofficialacc-title.md
 ```
 
 ```markdown

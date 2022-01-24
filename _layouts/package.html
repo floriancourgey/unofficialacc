@@ -4,7 +4,7 @@ layout: default
 
 {% assign author = site.authors | where: 'name', page.author | first %}
 
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry col-sm" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">
       {{ page.title | smartify }}
@@ -40,20 +40,39 @@ layout: default
     </div>
   </header>
 
-  <div>
-    <a class="btn btn-primary" href="{{page.download_link}}" role="button" target="_blank"><i class="fas fa-download"></i> Download</a>
-    <span class="btn border border-primary">Downloads: <span id="download_count" class="badge badge-success"><i class="fas fa-circle-notch fa-spin"></i></span></span>
-    Updated at: <span>{{page.updated_at}}</span>
-    Last Version: <span>{{page.last_version}}</span>
-    Created at: <span>{{page.created_at}}</span>
-  </div>
+  <div class="">
+    <div class="row">
+      <div class="post-content e-content col-md-9" itemprop="articleBody">
+        {{ content }}
+      </div>
 
-  <script>
-    var release_name = '{{page.release_name}}';
-  </script>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+      <div class="col-md-3 order-sm-1">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-info-circle"></i> Package info
+          </div>
+          <div class="card-body">
+            <div>
+              <a class="btn btn-primary" href="{{page.download_link}}" role="button" target="_blank"><i class="fas fa-download"></i> Download</a>
+            </div>
+            <div>
+              <span class="btn border border-primary">Downloads: <span id="download_count" class="badge badge-success"><i class="fas fa-circle-notch fa-spin"></i></span></span>
+            </div>
+            <div>
+              Updated at: <span>{{page.updated_at}}</span>
+            </div>
+            <div>
+              Last Version: <span>{{page.last_version}}</span>
+            </div>
+            <div>
+              Created at: <span>{{page.created_at}}</span>
+            </div>
+          </div>
+          <div class="card-fooder">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   {%- if site.disqus.shortname -%}
@@ -70,4 +89,12 @@ layout: default
   <div style="height:25px"></div>
 </article>
 
+<div>
+
+</div>
+
 <div style="height:50px"></div>
+
+<script>
+  var release_name = '{{page.release_name}}';
+</script>

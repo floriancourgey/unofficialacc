@@ -5,9 +5,8 @@ release_name: package-test
 created_at: 2022-01-22
 updated_at: 2022-01-23
 last_version: 0.0.1
+short_description: First package to test deployment & Git repo
 ---
-
-<p class="text-center">🐍👑🌍</p>
 
 <!--more-->
 

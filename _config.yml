@@ -35,21 +35,15 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Florian Courgey"
-  - scope:
-      path: ""
       type: "packages"
     values:
-      layout: "post"
+      layout: "package"
       author: "Florian Courgey"
   - scope:
       path: ""
       type: "drafts"
     values:
-      layout: "post"
+      layout: "package"
       author: "Florian Courgey"
   - scope:
       path: ""
