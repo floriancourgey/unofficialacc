@@ -1,6 +1,6 @@
 ---
 title: ACC web
-download_link: https://github.com/floriancourgey/acc-web/releases/download/new-package-v0.1.2/new-package.xml
+download_link: https://github.com/floriancourgey/acc-web/releases/download/0.1.2/unofficialacc-acc_web.xml
 release_name: new-package
 created_at: 2024-09-01
 updated_at: 2024-09-20
