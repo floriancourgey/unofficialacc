@@ -22,8 +22,8 @@ permarlink: /
       </a>
     </h2>
     <div class="row">
-      {% assign recentpackages = site.packages | sort: "updated_at" | limit: 3 %}
-      {% for package in recentpackages %}
+      {% assign recentpackages = site.packages | sort: "updated_at" %}
+      {% for package in recentpackages limit: 3 %}
       <div class="col-sm-4 pb-4">
           {% include package-card.html package="package" %}
         </div>
@@ -40,8 +40,8 @@ permarlink: /
       </a>
     </h2>
     <div class="row">
-      {% assign toppackages = site.packages | sort: "created_at" | limit: 3 %}
-      {% for package in toppackages %}
+      {% assign toppackages = site.packages | sort: "created_at" %}
+      {% for package in toppackages limit: 3 %}
       <div class="col-sm-4 pb-4">
           {% include package-card.html package="package" %}
         </div>
