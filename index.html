@@ -22,10 +22,10 @@ permarlink: /
       </a>
     </h2>
     <div class="row">
-      {% assign toppackages = site.packages | sort: "priority_top" %}
+      {% assign toppackages = site.packages |where_exp: "package", "package.priority_top > 0" | sort: "priority_top" %}
       {% for package in toppackages limit: 3 %}
-      <div class="col-sm-4 pb-4">
-          {% include package-card.html package="package" %}
+        <div class="col-sm-4 pb-4">
+          {% include package-card.html package=package %}
         </div>
       {% endfor %}
     </div>
@@ -40,10 +40,10 @@ permarlink: /
       </a>
     </h2>
     <div class="row">
-      {% assign recentpackages = site.packages | sort: "created_at" %}
+      {% assign recentpackages = site.packages | sort: "created_at" | reverse %}
       {% for package in recentpackages limit: 3 %}
-      <div class="col-sm-4 pb-4">
-          {% include package-card.html package="package" %}
+        <div class="col-sm-4 pb-4">
+          {% include package-card.html package=package %}
         </div>
       {% endfor %}
     </div>
@@ -57,13 +57,28 @@ permarlink: /
         <small class="text-muted h6">(Show all {{ site.packages | size }} packages)</small>
       </a>
     </h2>
-    <div class="row">
-      {% assign recentpackages = site.packages | sort: "updated_at" %}
-      {% for package in recentpackages limit: 3 %}
-      <div class="col-sm-4 pb-4">
-          {% include package-card.html package="package" %}
-        </div>
-      {% endfor %}
+    <div class="">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Downloads</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% assign recentpackages = site.packages | sort: "updated_at" | reverse %}
+          {% for package in recentpackages limit: 15 %}
+            <tr>
+              <td><a href="{{ package.url | relative_url }}">{{package.title}}</a></td>
+              <td>{{package.created_at}}</td>
+              <td>{{package.updated_at}}</td>
+              <td>x</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </div>
 

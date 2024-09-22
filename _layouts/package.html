@@ -12,8 +12,7 @@ layout: default
     <div class="row post-meta">
       <div class="col-6">
         <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          {{ page.date | date: date_format }}
+          Created on {{ page.created_at }}, updated on {{ page.updated_at }}
         </time>
         {%- if author -%}
           • <a href="{{ author.url | relative_url }}">
