@@ -13,24 +13,6 @@ permarlink: /
     </p>
   </div>
 
-  <!-- Recent -->
-  <div class="my-4">
-    <h2>
-      Recent packages
-      <a href="{{ site.baseurl }}{% link archives.md %}">
-        <small class="text-muted h6">(Show all {{ site.packages | size }} packages)</small>
-      </a>
-    </h2>
-    <div class="row">
-      {% assign recentpackages = site.packages | sort: "updated_at" %}
-      {% for package in recentpackages limit: 3 %}
-      <div class="col-sm-4 pb-4">
-          {% include package-card.html package="package" %}
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-
   <!-- Top -->
   <div class="my-4">
     <h2>
@@ -40,8 +22,44 @@ permarlink: /
       </a>
     </h2>
     <div class="row">
-      {% assign toppackages = site.packages | sort: "created_at" %}
+      {% assign toppackages = site.packages | sort: "priority_top" %}
       {% for package in toppackages limit: 3 %}
+      <div class="col-sm-4 pb-4">
+          {% include package-card.html package="package" %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Recent creations -->
+  <div class="my-4">
+    <h2>
+      New packages
+      <a href="{{ site.baseurl }}{% link archives.md %}">
+        <small class="text-muted h6">(Show all {{ site.packages | size }} packages)</small>
+      </a>
+    </h2>
+    <div class="row">
+      {% assign recentpackages = site.packages | sort: "created_at" %}
+      {% for package in recentpackages limit: 3 %}
+      <div class="col-sm-4 pb-4">
+          {% include package-card.html package="package" %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Recent updates -->
+  <div class="my-4">
+    <h2>
+      Recent updates
+      <a href="{{ site.baseurl }}{% link archives.md %}">
+        <small class="text-muted h6">(Show all {{ site.packages | size }} packages)</small>
+      </a>
+    </h2>
+    <div class="row">
+      {% assign recentpackages = site.packages | sort: "updated_at" %}
+      {% for package in recentpackages limit: 3 %}
       <div class="col-sm-4 pb-4">
           {% include package-card.html package="package" %}
         </div>

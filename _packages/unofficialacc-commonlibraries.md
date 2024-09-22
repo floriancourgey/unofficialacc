@@ -4,6 +4,7 @@ download_link: https://github.com/floriancourgey/unofficialacc/releases/download
 release_name: unofficialacc-commonlibraries
 created_at: 2020-01-01
 updated_at: 2024-09-01
+priority_top: 3
 last_version: 1.1.0
 short_description: "Packaged common Javascript library for easy access: lodash, moment and more to come!"
 entities:

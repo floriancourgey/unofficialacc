@@ -4,6 +4,7 @@ download_link: https://github.com/floriancourgey/unofficialacc/releases/download
 release_name: new-package
 created_at: 2024-09-01
 updated_at: 2024-09-20
+priority_top: 1
 last_version: 0.1.2
 short_description: Powerful web portal to manage your Adobe Campaign instance!
 ---
