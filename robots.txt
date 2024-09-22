@@ -2,4 +2,4 @@
 ---
 # www.robotstxt.org/
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: {{ site.baseurl }}/sitemap.xml

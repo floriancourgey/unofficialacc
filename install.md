@@ -15,9 +15,9 @@ From the Adobe Campaign Console menu: `Tools` > `Advanced` > `Import package` to
 
 Choose the package and update the `buildNumber`.
 
-![]({{site.url}}/assets/install/import-package.jpg)
+![]({{site.baseurl}}/assets/install/import-package.jpg)
 
-![]({{site.url}}//assets/install/update-buildNumber.jpg)
+![]({{site.baseurl}}//assets/install/update-buildNumber.jpg)
 
 ## Verification
 
@@ -25,6 +25,6 @@ Package can be verified via the standard `Package Management`.
 
 All Unofficial ACC packages include a folder under `/Unofficial ACC Packages` for testing & troubleshooting.
 
-![]({{site.url}}//assets/install/verify-via-package.jpg)
+![]({{site.baseurl}}//assets/install/verify-via-package.jpg)
 
-![]({{site.url}}//assets/install/verify-via-view.jpg)
+![]({{site.baseurl}}//assets/install/verify-via-view.jpg)

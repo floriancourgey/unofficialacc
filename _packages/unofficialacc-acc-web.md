@@ -26,10 +26,10 @@ Compatible with any browser, including mobile (iOS, Android), Linux and Windows.
 ![]({{site.baseurl}}/assets/unofficialacc-acc-web/workflow-execution.jpg)
 
 ## Query
-![]({{site.url}}/assets/unofficialacc-acc-web/generic-query-editor.jpg)
+![]({{site.baseurl}}/assets/unofficialacc-acc-web/generic-query-editor.jpg)
 
 ## Code Editor
-![]({{site.url}}/assets/unofficialacc-acc-web/code-editor.jpg)
+![]({{site.baseurl}}/assets/unofficialacc-acc-web/code-editor.jpg)
 
 ## Current features
 
