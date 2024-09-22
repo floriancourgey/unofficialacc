@@ -10,7 +10,7 @@ short_description: Powerful web portal to manage your Adobe Campaign instance!
 
 <!--more-->
 
-# acc-web
+# ACC Web
 
 Access Adobe Campaign best features from anywhere with ACC Web: Explorer, Generic Query Editor, Manage Operators/Workflows/Deliveries and more!
 
@@ -26,6 +26,9 @@ Compatible with any browser, including mobile (iOS, Android), Linux and Windows.
 
 ## Query
 ![](https://github.com/floriancourgey/acc-web/raw/main/doc/generic-query-editor.png)
+
+## Code Editor
+![](https://github.com/floriancourgey/acc-web/raw/main/doc/code-editor.png)
 
 ## Current features
 
