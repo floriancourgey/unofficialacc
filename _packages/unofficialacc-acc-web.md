@@ -20,10 +20,10 @@ Advanced features include CodeMirror IDE for enhanced syntax highlighting (XML, 
 Compatible with any browser, including mobile (iOS, Android), Linux and Windows.
 
 ## Explorer
-![]({{site.url}}/assets/unofficialacc-acc-web/explorer.jpg)
+![]({{site.baseurl}}/assets/unofficialacc-acc-web/explorer.jpg)
 
 ## Workflow
-![]({{site.url}}/assets/unofficialacc-acc-web/workflow-execution.jpg)
+![]({{site.baseurl}}/assets/unofficialacc-acc-web/workflow-execution.jpg)
 
 ## Query
 ![]({{site.url}}/assets/unofficialacc-acc-web/generic-query-editor.jpg)
