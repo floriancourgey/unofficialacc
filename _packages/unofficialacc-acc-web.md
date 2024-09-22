@@ -19,16 +19,16 @@ Advanced features include CodeMirror IDE for enhanced syntax highlighting (XML, 
 Compatible with any browser, including mobile (iOS, Android), Linux and Windows.
 
 ## Explorer
-![](https://raw.githubusercontent.com/floriancourgey/acc-web/main/doc/explorer.png?token=GHSAT0AAAAAACWY7H43ZODJQ2SPI226TVMAZXPN72A)
+![](/assets/unofficialacc-acc-web/explorer.png)
 
 ## Workflow
-![](https://github.com/floriancourgey/acc-web/raw/main/doc/workflow-execution.png)
+![](/assets/unofficialacc-acc-web/workflow-execution.png)
 
 ## Query
-![](https://github.com/floriancourgey/acc-web/raw/main/doc/generic-query-editor.png)
+![](/assets/unofficialacc-acc-web/generic-query-editor.png)
 
 ## Code Editor
-![](https://github.com/floriancourgey/acc-web/raw/main/doc/code-editor.png)
+![](/assets/unofficialacc-acc-web/code-editor.png)
 
 ## Current features
 
